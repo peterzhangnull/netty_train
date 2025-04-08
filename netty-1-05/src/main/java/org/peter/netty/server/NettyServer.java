@@ -10,7 +10,7 @@ import io.netty.channel.socket.nio.NioServerSocketChannel;
 /**
  * @author zhangye
  * @version 2.0
- * @date 2025-04-07 23:20
+ * @date 2025-04-08 17:13
  * @description
  */
 public class NettyServer {
@@ -22,15 +22,15 @@ public class NettyServer {
     private void bind(int port) {
         EventLoopGroup parentGroup = new NioEventLoopGroup();
         EventLoopGroup childGroup = new NioEventLoopGroup();
-        ServerBootstrap bootstrap = new ServerBootstrap();
-        bootstrap.group(parentGroup, childGroup)
+        ServerBootstrap serverBootstrap = new ServerBootstrap();
+        serverBootstrap.group(parentGroup, childGroup)
                 .channel(NioServerSocketChannel.class)
                 .option(ChannelOption.SO_BACKLOG, 128)
                 .childHandler(new MyChannelInitializer());
         try {
-            ChannelFuture channelFuture = bootstrap.bind(port).sync();
-            System.out.println("netty server started on port " + port);
-            channelFuture.channel().closeFuture().sync();
+            ChannelFuture future = serverBootstrap.bind(port).sync();
+            System.out.println("netty server start success， port:" + port);
+            future.channel().closeFuture().sync();
         } catch (InterruptedException e) {
             e.printStackTrace();
         } finally {
