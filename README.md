@@ -33,10 +33,10 @@ netty_train/
 ├── .idea/
 ├── build/
 ├── gradle/
-├── netty-1-00/          # 第一个示例项目：基础入门
-├── netty-1-01/          # 第二个示例项目：进阶用法
-├── netty-1-02/          # 第三个示例项目：编解码与协议处理
-├── netty-1-03/          # 第四个示例项目：粘包拆包、心跳检测等
+├── netty-1-00/          # 第一个示例项目：JavaIO之门BIO、NIO、AIO实战练习
+├── netty-1-01/          # 第二个示例项目：NettyServer
+├── netty-1-02/          # 第三个示例项目：NettyServer接收数据
+├── netty-1-03/          # 第四个示例项目：NettyServer字符串解码器
 ├── netty-demo/          # 综合实战 Demo
 ├── src/                 # 公共源码目录
 ├── build.gradle
