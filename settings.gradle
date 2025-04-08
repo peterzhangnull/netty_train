@@ -1,0 +1,7 @@
+rootProject.name = 'netty_train'
+include 'netty-1-00'
+include 'netty-demo'
+include 'netty-1-01'
+include 'netty-1-02'
+include 'netty-1-03'
+
